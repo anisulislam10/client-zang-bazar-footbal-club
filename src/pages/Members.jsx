@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Members() {
   const [members, setMembers] = useState([]);
@@ -45,13 +46,12 @@ function Members() {
       <div className="max-w-7xl mx-auto">
         {/* Hero Section with Philosophy */}
         <div className="relative bg-gradient-to-r from-blue-800 to-blue-500 rounded-2xl overflow-hidden mb-12">
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Our Dedicated Members
             </h1>
-            </div>
-          
+          </div>
           
           <div className="max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Our Core Values</h2>
@@ -76,10 +76,11 @@ function Members() {
         ) : (
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {members.map((member) => (
-              <div 
-                key={member._id}
+              <Link 
+                to={`/member/${member.slug}`}
                 className="group relative bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
+               
                 {/* Background Decoration */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
@@ -129,13 +130,9 @@ function Members() {
                         </svg>
                       </span>
                     </div>
-                    
-                   
                   </div>
-
-                 
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}
