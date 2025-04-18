@@ -19,6 +19,7 @@ const DashboardLayout = () => {
     localStorage.removeItem("isAuthenticated"); 
     navigate("/admin"); 
   };
+  
 
   return (
     <div className="flex h-screen">
