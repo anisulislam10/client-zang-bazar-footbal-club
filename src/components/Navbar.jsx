@@ -46,12 +46,14 @@ function Navbar() {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-800/70 backdrop-blur-lg' : 'bg-gray-800'} text-white p-4`}>
       <div className="container mx-auto flex justify-between items-center relative">
         {/* Logo or Brand */}
-        <img 
-                src={`${import.meta.env.VITE_SERVER_URL.replace("api/", "")}uploads/${contactData?.image?.replace(/\\/g, '/')}`} 
-                alt="Club Badge" 
-                className="h-18 w-18 object-contain"
-                loading="lazy"
-              />
+        <Link to="/">
+  <img 
+    src={`${import.meta.env.VITE_SERVER_URL.replace("api/", "")}uploads/${contactData?.image?.replace(/\\/g, '/')}`} 
+    alt="Club Badge" 
+    className="h-18 w-18 object-contain"
+    loading="lazy"
+  />
+</Link>
 
         {/* Hamburger Button (for small screens) */}
         <button 

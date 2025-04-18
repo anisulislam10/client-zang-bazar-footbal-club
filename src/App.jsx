@@ -30,6 +30,7 @@ import LastMatch from "./admin/pages/LastMatch";
 import Honors from "./admin/pages/Honors";
 import AddNextMatch from "./admin/components/NextMatch/AddNextMatch";
 import EditNextMatch from "./admin/pages/../components/NextMatch/EditNextMatch";
+import MemberDetails from "./pages/MemberDetails";
 
 function App() {
   return (
@@ -45,6 +46,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/member/:slug" element={<MemberDetails />} />
+
 
         {/* Admin Login Route */}
         <Route path="/admin" element={<Login />} />
