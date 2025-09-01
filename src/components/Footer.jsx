@@ -41,7 +41,7 @@ function Footer() {
             </p>
             <div className="flex space-x-4">
               <img 
-                src={`${import.meta.env.VITE_SERVER_URL.replace("api/", "")}uploads/${contactData.image.replace(/\\/g, '/')}`} 
+                src={`${import.meta.env.VITE_SERVER_URL.replace("api/", "")}uploads/${contactData?.image.replace(/\\/g, '/')}`} 
                 alt="Club Badge" 
                 className="h-12 w-12 object-contain"
                 loading="lazy"
